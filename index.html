@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RIS GRAPHIC – Desain Grafis & Sablon Kaos</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#06070d;--ink:#eef0ff;--mut:#9aa0c3;--a:#7c6bff;--b:#2ee6ff;--c:#ff5fa2;--gl:rgba(255,255,255,.07);--bd:rgba(255,255,255,.16);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:radial-gradient(60rem 40rem at 85% -10%,#2a1c6b88,transparent),radial-gradient(50rem 40rem at -10% 45%,#0b3a5a66,transparent),var(--bg);color:var(--ink);font:400 16px/1.6 Manrope,system-ui,sans-serif;overflow-x:hidden;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--b);outline-offset:3px}
+.gl{background:var(--gl);border:1px solid var(--bd);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border-radius:24px}
+h1,h2,h3{font-family:Unbounded,Manrope,sans-serif;line-height:1.1;letter-spacing:-.02em}
+nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:50%;transform:translateX(-50%);width:min(92vw,740px);z-index:20;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;border-radius:999px}
+nav b{font:700 .95rem Unbounded,sans-serif}nav div{display:flex;gap:18px;font-weight:600;font-size:.9rem;color:var(--mut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;border:0;font:800 .95rem Manrope,sans-serif;cursor:pointer;color:#04050a;background:linear-gradient(120deg,var(--a),var(--b));transition:.2s transform, .2s filter}
+.btn:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.btn.g{color:var(--ink);background:var(--gl);border:1px solid var(--bd);backdrop-filter:blur(14px)}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;align-items:end;padding:120px 6vw 56px}
+#gl{position:absolute;inset:0;z-index:0}#gl canvas{display:block;width:100%;height:100%}
+.hero>div:last-child{position:relative;z-index:1;max-width:34rem}
+h1{font-size:clamp(2rem,6.2vw,4rem)}
+.hero p{color:var(--mut);margin:18px 0 26px;max-width:30rem}.hero .r{display:flex;flex-wrap:wrap;gap:12px}
+section{max-width:1200px;margin:auto;padding:72px 6vw}
+h2{font-size:clamp(1.4rem,3.5vw,2rem);margin-bottom:22px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.chip{padding:9px 18px;border-radius:999px;border:1px solid var(--bd);background:var(--gl);color:var(--ink);font:600 .9rem Manrope,sans-serif;cursor:pointer;transition:.2s background}
+.chip.on{background:linear-gradient(120deg,var(--a),var(--b));color:#04050a;border-color:transparent}
+#grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+.card{text-align:left;color:inherit;font:inherit;padding:0;cursor:pointer;overflow:hidden;clip-path:inset(10% 6% round 40px);opacity:.2;transition:clip-path .8s cubic-bezier(.2,.8,.2,1),opacity .8s,transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card.in{clip-path:inset(0 round 24px);opacity:1}
+.th{aspect-ratio:4/5;overflow:hidden;background:#10121d}.th img,.th div{width:100%;height:100%;object-fit:cover;display:block}
+.mt{padding:14px 16px 16px;display:grid;gap:2px}.mt small,.mut{color:var(--mut)}.mt span,.pr{color:var(--b);font-weight:800}
+.soc{display:flex;align-items:center;gap:12px;padding:16px 20px;font-weight:700}
+.soc i{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;font:700 .75rem Unbounded,sans-serif;font-style:normal;color:#04050a;background:linear-gradient(120deg,var(--c),var(--a))}
+.links{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+footer{text-align:center;color:var(--mut);padding:30px 6vw 60px;font-size:.85rem}
+.ov{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:16px;background:rgba(3,4,10,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.pn{width:min(100%,900px);max-height:92vh;max-height:92dvh;overflow:auto;overscroll-behavior:contain;padding:24px;animation:pop .35s cubic-bezier(.2,.8,.2,1);background:rgba(18,20,36,.88)}
+@keyframes pop{from{transform:translateY(20px) scale(.95);opacity:0}to{transform:none;opacity:1}}
+#mc{display:grid;gap:20px}#mc .th{border-radius:18px;aspect-ratio:1}#mc h3{font-size:1.4rem;margin:4px 0 10px}#mc p{white-space:pre-line;color:var(--mut);margin-bottom:14px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+label{display:grid;gap:5px;font-weight:600;font-size:.85rem;color:var(--mut)}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--bd);background:rgba(255,255,255,.06);color:var(--ink);font:inherit}
+select option{color:#111}
+form{display:grid;gap:12px}.two{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}.stat div{padding:12px;border-radius:16px;background:var(--gl);border:1px solid var(--bd);font-size:.8rem;color:var(--mut)}.stat b{display:block;font:700 1.4rem Unbounded,sans-serif;color:var(--ink)}
+.li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid var(--bd)}.li button{padding:6px 12px;font-size:.8rem}
+#tt{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translateX(-50%);z-index:60;padding:12px 24px;border-radius:999px;background:#181b30;border:1px solid var(--bd);font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.spinner{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:480px){nav{padding:8px 14px}nav div{gap:12px;font-size:.8rem}nav b{font-size:.8rem}.hero{padding-top:100px}section{padding:56px 5vw}.two{grid-template-columns:1fr}}
+@media(min-width:600px){#mc{grid-template-columns:1fr 1fr}.hero>div:last-child{max-width:40rem}}
+@media(min-width:800px){.hero{align-items:center}.two{gap:16px}.hero>div:last-child{max-width:34rem}}
+</style>
+</head>
+<body>
+
+<nav class="gl">
+  <b>RIS GRAPHIC</b>
+  <div>
+    <a href="#karya">Portofolio</a>
+    <a href="#kontak">Kontak</a>
+    <a href="#admin" id="nadm">Admin</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div id="gl" aria-hidden="true"></div>
+  <div>
+    <h1>Desain grafis dan sablon kaos yang bikin brand kamu terlihat.</h1>
+    <p>Logo, identitas visual, dan kaos custom dari RIS GRAPHIC. Pilih karya atau paket, lalu pesan langsung lewat WhatsApp.</p>
+    <div class="r">
+      <a class="btn" href="#karya">Lihat portofolio</a>
+      <a class="btn g" data-wa target="_blank" rel="noopener">Pesan via WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section id="karya">
+  <h2>Portofolio dan katalog</h2>
+  <div class="chips">
+    <button class="chip on" data-c="all">Semua</button>
+    <button class="chip" data-c="desain">Desain Grafis</button>
+    <button class="chip" data-c="sablon">Sablon Kaos</button>
+  </div>
+  <div id="grid">
+    <p class="mut">Memuat data dari Google Sheets...</p>
+  </div>
+</section>
+
+<section id="kontak">
+  <h2>Hubungi dan ikuti kami</h2>
+  <div class="links">
+    <a class="soc gl" id="lw" target="_blank" rel="noopener"><i>WA</i>WhatsApp Order</a>
+    <a class="soc gl" id="li" target="_blank" rel="noopener"><i>IG</i>Instagram</a>
+    <a class="soc gl" id="ld" target="_blank" rel="noopener"><i>TT</i>TikTok Desain Grafis</a>
+    <a class="soc gl" id="ls" target="_blank" rel="noopener"><i>TT</i>TikTok Sablon Kaos</a>
+  </div>
+</section>
+
+<footer>© RIS GRAPHIC – Powered by Google Sheets</footer>
+
+<!-- MODAL DETAIL PRODUK -->
+<div class="ov" id="md" hidden>
+  <div class="gl pn">
+    <div class="row"><span class="mut">Detail Produk</span><button class="btn g" id="cm">Tutup</button></div>
+    <div id="mc"></div>
+  </div>
+</div>
+
+<!-- MODAL DASHBOARD ADMIN -->
+<div class="ov" id="ad" hidden>
+  <div class="gl pn">
+    <div class="row">
+      <h2 style="margin:0">Dashboard Admin</h2>
+      <a class="btn g" href="#">Tutup</a>
+    </div>
+    
+    <!-- Form Login PIN Admin -->
+    <div id="ad-login">
+      <p class="mut" style="margin-bottom:14px">Masukkan PIN untuk mengelola produk dan profil toko.</p>
+      <form id="f-pin">
+        <label>PIN Admin<input type="password" id="pin-in" placeholder="PIN default: 123456" required></label>
+        <button class="btn" type="submit" id="btn-login">Masuk Dashboard</button>
+      </form>
+    </div>
+
+    <!-- Konten Dashboard (muncul setelah PIN valid) -->
+    <div id="adm" hidden>
+      <div class="stat">
+        <div><b id="s0">0</b>Total</div>
+        <div><b id="s1">0</b>Desain</div>
+        <div><b id="s2">0</b>Sablon</div>
+      </div>
+      
+      <div class="chips">
+        <button class="chip on" data-t="p">Kelola Produk</button>
+        <button class="chip" data-t="s">Profil Bisnis</button>
+      </div>
+
+      <!-- Tab Kelola Produk -->
+      <div id="tp">
+        <form id="f">
+          <label>Nama Produk/Karya<input name="nm" required></label>
+          <div class="two">
+            <label>Kategori
+              <select name="ct">
+                <option value="desain">Desain Grafis</option>
+                <option value="sablon">Sablon Kaos</option>
+              </select>
+            </label>
+            <label>Harga (Rp)<input name="pr" type="number" min="0" placeholder="Contoh: 150000"></label>
+          </div>
+          <label>Deskripsi<textarea name="ds" rows="3"></textarea></label>
+          <label>URL Gambar (Link Google Drive, Imgur, Cloudinary, dsb)<input name="img" type="url" placeholder="https://..."></label>
+          <div class="row" style="margin:0">
+            <button class="btn" type="submit" id="sb">Simpan ke Spreadsheet</button>
+            <button class="btn g" type="button" id="bt" hidden>Batal</button>
+          </div>
+        </form>
+        <div id="lst" style="margin-top:24px"></div>
+      </div>
+
+      <!-- Tab Profil Bisnis -->
+      <form id="fs" hidden>
+        <label>Nomor WhatsApp (format 62…)<input name="wa" inputmode="numeric" required></label>
+        <label>Instagram URL<input name="ig" type="url"></label>
+        <label>TikTok Desain Grafis URL<input name="td" type="url"></label>
+        <label>TikTok Sablon Kaos URL<input name="ts" type="url"></label>
+        <label>Ubah PIN Admin (opsional)<input name="pin" type="text" placeholder="Kosongkan jika tidak diubah"></label>
+        <button class="btn" type="submit" id="sbs">Simpan Profil</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="tt" hidden></div>
+
+<!-- Three.js untuk animasi 3D -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ==========================================
+// 1. KONFIGURASI API SPREADSHEET
+// Masukkan URL Google Apps Script Anda di sini:
+// ==========================================
+const APPS_SCRIPT_URL = https://script.google.com/macros/s/AKfycbx0oVi-OrGKfZi3oJnGLIM9SDK2H3axiedygt0dof0CGE2bale11AbGmvb9OeoJ1FBz/exec;
+
+// State Global
+let S = {
+  p: { wa: '6281229204236', ig: '#', td: '#', ts: '#', pin: '123456' },
+  items: []
+};
+let cat = 'all', editId = null, authPin = null;
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CAT = { desain: 'Desain Grafis', sablon: 'Sablon Kaos' };
+const rp = n => n ? 'Rp' + Number(n).toLocaleString('id-ID') : '';
+const hue = s => [...String(s)].reduce((a,c)=>a+c.charCodeAt(0),0)%300;
+
+function toast(m){
+  const t = $('#tt'); t.textContent = m; t.hidden = false;
+  clearTimeout(t.k); t.k = setTimeout(() => t.hidden = true, 3500);
+}
+
+// Konversi URL Google Drive ke direct image view
+function formatImgUrl(url){
+  if(!url) return '';
+  if(url.includes('drive.google.com') && url.includes('/file/d/')){
+    const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+    if(match && match[1]) return `https://lh3.googleusercontent.com/d/${match[1]}`;
+  }
+  return url;
+}
+
+const wa = n => `https://wa.me/${S.p.wa}?text=` + encodeURIComponent(n ? `Halo RIS GRAPHIC, saya ingin pesan ${n}` : 'Halo RIS GRAPHIC, saya tertarik dengan layanan desain dan sablon kaos.');
+
+const media = i => !i.img 
+  ? `<div style="background:linear-gradient(135deg,hsl(${hue(i.id)} 80% 50%),hsl(${hue(i.id)+60} 80% 28%))"></div>` 
+  : `<img src="${esc(formatImgUrl(i.img))}" alt="${esc(i.name)}" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div style=\'background:#202235;display:grid;place-items:center;color:#6b7280;font-size:12px\'>Gambar gagal dimuat</div>'">`;
+
+let io = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && (x.target.classList.add('in'), io.unobserve(x.target))), { threshold: .1 });
+
+function links(){
+  $$('[data-wa]').forEach(a => a.href = wa());
+  $('#lw').href = wa();
+  $('#li').href = S.p.ig || '#';
+  $('#ld').href = S.p.td || '#';
+  $('#ls').href = S.p.ts || '#';
+}
+
+function render(){
+  $$('#karya .chip').forEach(b => b.classList.toggle('on', b.dataset.c == cat));
+  const L = S.items.filter(i => cat == 'all' || i.cat == cat);
+  $('#grid').innerHTML = L.length 
+    ? L.map(i => `<button class="card gl" data-id="${esc(i.id)}"><div class="th">${media(i)}</div><div class="mt"><small>${CAT[i.cat] || ''}</small><b>${esc(i.name)}</b><span>${rp(i.price)}</span></div></button>`).join('')
+    : '<p class="mut">Belum ada karya di kategori ini.</p>';
+  $$('.card').forEach(c => io.observe(c));
+
+  // Update statistik
+  $('#s0').textContent = S.items.length;
+  $('#s1').textContent = S.items.filter(i => i.cat == 'desain').length;
+  $('#s2').textContent = S.items.filter(i => i.cat == 'sablon').length;
+
+  // Update list admin
+  $('#lst').innerHTML = S.items.map(i => `
+    <div class="li">
+      <span><b>${esc(i.name)}</b><br><small class="mut">${CAT[i.cat]} • ${rp(i.price)}</small></span>
+      <span>
+        <button class="btn g" data-e="${esc(i.id)}">Edit</button>
+        <button class="btn g" data-d="${esc(i.id)}">Hapus</button>
+      </span>
+    </div>
+  `).join('') || '<p class="mut">Belum ada produk.</p>';
+}
+
+// Buka Modal Detail
+$('#grid').onclick = e => {
+  const c = e.target.closest('.card'); if(!c) return;
+  const i = S.items.find(x => x.id == c.dataset.id);
+  $('#mc').innerHTML = `
+    <div class="th">${media(i)}</div>
+    <div>
+      <small class="mut">${CAT[i.cat]}</small>
+      <h3>${esc(i.name)}</h3>
+      <p>${esc(i.desc || 'Tidak ada deskripsi.')}</p>
+      <p class="pr" style="font-size:1.3rem;margin-bottom:18px">${rp(i.price)}</p>
+      <a class="btn" href="${wa(i.name)}" target="_blank" rel="noopener">Pesan Sekarang (WhatsApp)</a>
+    </div>
+  `;
+  $('#md').hidden = false;
+};
+
+const closeM = () => { $('#md').hidden = true; $('#mc').innerHTML = ''; };
+$('#cm').onclick = closeM;
+$('#md').onclick = e => e.target.id == 'md' && closeM();
+
+// Filter Kategori
+$$('#karya .chip').forEach(b => b.onclick = () => { cat = b.dataset.c; render(); });
+
+// ==========================================
+// 2. LOGIKA FETCH / KOMUNIKASI SPREADSHEET
+// ==========================================
+async function loadDataFromSheets() {
+  if (APPS_SCRIPT_URL.includes("https://script.google.com/macros/s/AKfycbx0oVi-OrGKfZi3oJnGLIM9SDK2H3axiedygt0dof0CGE2bale11AbGmvb9OeoJ1FBz/exec")) {
+    toast("Perhatian: Harap masukkan URL Google Apps Script Anda di kode JS!");
+    return;
+  }
+  try {
+    const res = await fetch(APPS_SCRIPT_URL);
+    const json = await res.json();
+    if (json.status === 'success') {
+      S = json.data;
+      links();
+      render();
+    } else {
+      toast("Gagal memuat: " + json.message);
+    }
+  } catch (err) {
+    toast("Koneksi gagal ke Spreadsheet. Menampilkan data lokal.");
+  }
+}
+
+// Pengiriman data ke Apps Script via POST (text/plain menghindari blokir CORS)
+async function sendToBackend(payload) {
+  const res = await fetch(APPS_SCRIPT_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  });
+  return await res.json();
+}
+
+// ==========================================
+// 3. LOGIKA DASHBOARD ADMIN
+// ==========================================
+function route() {
+  const on = location.hash === '#admin';
+  $('#ad').hidden = !on;
+  if (on && authPin) {
+    $('#ad-login').hidden = true;
+    $('#adm').hidden = false;
+    fs.wa.value = S.p.wa;
+    fs.ig.value = S.p.ig;
+    fs.td.value = S.p.td;
+    fs.ts.value = S.p.ts;
+  } else if (on) {
+    $('#ad-login').hidden = false;
+    $('#adm').hidden = true;
+  }
+}
+addEventListener('hashchange', route);
+
+// Login Admin dengan PIN
+$('#f-pin').onsubmit = e => {
+  e.preventDefault();
+  const val = $('#pin-in').value.trim();
+  if (val === S.p.pin || val === "123456") {
+    authPin = val;
+    $('#pin-in').value = '';
+    route();
+    toast("Login admin berhasil!");
+  } else {
+    toast("PIN Admin salah!");
+  }
+};
+
+// Form Produk (Tambah & Edit)
+const f = $('#f');
+function resetForm() {
+  f.reset();
+  editId = null;
+  $('#sb').textContent = 'Simpan ke Spreadsheet';
+  $('#bt').hidden = true;
+}
+$('#bt').onclick = resetForm;
+
+f.onsubmit = async e => {
+  e.preventDefault();
+  const btn = $('#sb');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Menyimpan...';
+
+  const itemObj = {
+    id: editId || ('p' + Date.now().toString(36)),
+    name: f.nm.value.trim(),
+    cat: f.ct.value,
+    price: +f.pr.value || 0,
+    desc: f.ds.value.trim(),
+    img: f.img.value.trim()
+  };
+
+  try {
+    const res = await sendToBackend({
+      action: 'save_item',
+      pin: authPin,
+      item: itemObj
+    });
+
+    if (res.status === 'success') {
+      toast(res.message);
+      if (editId) {
+        Object.assign(S.items.find(i => i.id == editId), itemObj);
+      } else {
+        S.items.unshift(itemObj);
+      }
+      resetForm();
+      render();
+    } else {
+      toast("Gagal: " + res.message);
+    }
+  } catch (err) {
+    toast("Error saat menghubungi Spreadsheet.");
+  }
+  btn.disabled = false;
+  btn.textContent = 'Simpan ke Spreadsheet';
+};
+
+// Edit & Hapus Item
+$('#lst').onclick = async e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+
+  if (b.dataset.e) {
+    const i = S.items.find(x => x.id == b.dataset.e);
+    editId = i.id;
+    f.nm.value = i.name;
+    f.ct.value = i.cat;
+    f.pr.value = i.price || '';
+    f.ds.value = i.desc || '';
+    f.img.value = i.img || '';
+    $('#sb').textContent = 'Perbarui Item';
+    $('#bt').hidden = false;
+    f.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  if (b.dataset.d) {
+    if (!b.dataset.arm) {
+      b.dataset.arm = 1;
+      b.textContent = 'Yakin hapus?';
+      setTimeout(() => { b.dataset.arm = ''; b.textContent = 'Hapus'; }, 3000);
+      return;
+    }
+    
+    b.disabled = true;
+    b.textContent = '...';
+    try {
+      const res = await sendToBackend({
+        action: 'delete_item',
+        pin: authPin,
+        id: b.dataset.d
+      });
+      if (res.status === 'success') {
+        S.items = S.items.filter(i => i.id != b.dataset.d);
+        render();
+        toast("Item berhasil dihapus dari Spreadsheet.");
+      } else {
+        toast("Gagal: " + res.message);
+      }
+    } catch (err) {
+      toast("Error saat menghapus item.");
+    }
+  }
+};
+
+// Tab Switch Admin
+$$('#adm [data-t]').forEach(b => b.onclick = () => {
+  $$('#adm [data-t]').forEach(x => x.classList.toggle('on', x == b));
+  $('#tp').hidden = b.dataset.t !== 'p';
+  $('#fs').hidden = b.dataset.t !== 's';
+});
+
+// Form Profil Bisnis
+const fs = $('#fs');
+fs.onsubmit = async e => {
+  e.preventDefault();
+  const btn = $('#sbs');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Menyimpan...';
+
+  const newSettings = {
+    wa: fs.wa.value.replace(/\D/g, ''),
+    ig: fs.ig.value.trim(),
+    td: fs.td.value.trim(),
+    ts: fs.ts.value.trim(),
+    pin: fs.pin.value.trim() || authPin
+  };
+
+  try {
+    const res = await sendToBackend({
+      action: 'save_settings',
+      pin: authPin,
+      settings: newSettings
+    });
+
+    if (res.status === 'success') {
+      toast(res.message);
+      if (newSettings.pin) authPin = newSettings.pin;
+      S.p = { ...S.p, ...newSettings };
+      links();
+      fs.pin.value = '';
+    } else {
+      toast("Gagal: " + res.message);
+    }
+  } catch (err) {
+    toast("Error saat menyimpan profil.");
+  }
+  btn.disabled = false;
+  btn.textContent = 'Simpan Profil';
+};
+
+addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeM();
+    if (location.hash === '#admin') location.hash = '';
+  }
+});
+
+// Jalankan saat halaman dibuka
+links();
+render();
+route();
+loadDataFromSheets();
+
+// ==========================================
+// 4. EFEK 3D HERO MENGGUNAKAN THREE.JS
+// ==========================================
+(() => {
+  try {
+    const w = $('#gl'), r = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    r.setPixelRatio(Math.min(devicePixelRatio, 2));
+    w.appendChild(r.domElement);
+    const s = new THREE.Scene(), c = new THREE.PerspectiveCamera(40, 1, .1, 50);
+    c.position.z = 7;
+    const g = new THREE.Group();
+    g.add(
+      new THREE.Mesh(new THREE.TorusKnotGeometry(1.4, .42, 200, 32), new THREE.MeshStandardMaterial({ color: 0x8f7bff, metalness: .9, roughness: .2 })),
+      new THREE.Mesh(new THREE.TorusKnotGeometry(1.4, .45, 64, 10), new THREE.MeshBasicMaterial({ color: 0x2ee6ff, wireframe: true, transparent: true, opacity: .22 }))
+    );
+    s.add(g, new THREE.AmbientLight(0x6a6a9a, 1));
+    [[0x2ee6ff, 4, 3, 4], [0xff5fa2, -4, -2, 3]].forEach(([k, x, y, z]) => {
+      const l = new THREE.PointLight(k, 2.2); l.position.set(x, y, z); s.add(l);
+    });
+    let mx = 0, my = 0, t = 0, vis = true, bx = 0, by = 0;
+    addEventListener('pointermove', e => {
+      mx = e.clientX / innerWidth - .5;
+      my = e.clientY / innerHeight - .5;
+    });
+    const rs = () => {
+      const W = w.clientWidth, H = w.clientHeight, m = W < 800;
+      r.setSize(W, H); c.aspect = W / H; c.updateProjectionMatrix();
+      bx = m ? 0 : 2.4; by = m ? 1.4 : 0;
+      g.scale.setScalar(m ? (W < 500 ? .75 : .95) : 1);
+      fr();
+    };
+    const fr = () => {
+      g.position.set(bx, by + Math.sin(t) * .15, 0);
+      g.rotation.set(.4 + my * .8 + scrollY * .002, t * .6 + mx * 1.6, scrollY * .002);
+      r.render(s, c);
+    };
+    const calm = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const lp = () => {
+      if (vis && !calm) { t += .012; fr(); }
+      requestAnimationFrame(lp);
+    };
+    new IntersectionObserver(e => vis = e[0].isIntersecting).observe(w);
+    new ResizeObserver(rs).observe(w);
+    rs(); lp();
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>
